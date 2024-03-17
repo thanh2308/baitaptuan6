@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="../js/jquery-3.7.1.min.js">
+    <link rel="stylesheet" href="../js/jqr.js">
+    <meta name="23633801" content="Huỳnh Hoài Thanh"> 
+    <script type="text/javascript">
+        function calculate(operation) {
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+            var result;
+
+            switch(operation) {
+                case 'add':
+                    result = num1 + num2;
+                    break;
+                case 'subtract':
+                    result = num1 - num2;
+                    break;
+                case 'multiply':
+                    result = num1 * num2;
+                    break;
+                case 'divide':
+                    result = num1 / num2;
+                    break;
+                case 'modulo':
+                    result = num1 % num2;
+                    break;
+                default:
+                    result = "Invalid operation";
+            }
+
+            document.getElementById("result").innerHTML = "Kết quả: " + result;
+        }   
+    </script>
+</head>
+<body>
+    <h2>PHÉP TÍNH CƠ BẢN</h2>
+    Nhập số thứ 1: <input type="number" id="num1"><br>
+    Nhập số thứ 2: <input type="number" id="num2"><br>
+    <button onclick="calculate('add')">Cộng</button>
+    <button onclick="calculate('subtract')">Trừ</button>
+    <button onclick="calculate('multiply')">Nhân</button>
+    <button onclick="calculate('divide')">Chia</button>
+    <button onclick="calculate('modulo')">Chia dư</button>
+    <p id="result"></p>
+</body>
+</html>

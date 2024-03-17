@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Thông Tin Sinh Viên</title>
+<link rel="stylesheet" href="../CSS/bootstrap.min.css">
+<link rel="stylesheet" href="../js/jquery-3.7.1.min.js">
+<link rel="stylesheet" href="../js/jqr.js">
+<meta name="23633801" content="Huỳnh Hoài Thanh">
+<style>
+  table {
+    width: 20%;
+    border-collapse:inherit;
+    border: black;
+    margin-top:10px;
+  }
+  th, td {
+    border: 1px solid #000000;
+    padding: 8px;
+  }
+  th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center; /* Thêm dòng này */
+    background-color: #dbdbdb;
+    color: rgb(0, 0, 0);
+  }
+</style>
+<script>
+  function getStudentDetails() {
+    var studentMSSV = prompt("Vui lòng nhập mã số sinh viên:");
+    var studentName = prompt("Vui lòng nhập họ tên sinh viên:");
+    var studentClass = prompt("Vui lòng nhập lớp của sinh viên:");
+
+    // Hiển thị thông tin sinh viên
+    document.getElementById('studentInfo').innerHTML =
+      "<table>" +
+      "<tr><th colspan='2'>DANH SACH SINH VIEN</th></tr>" + 
+      "<tr><th>Mã số SV</th><td>" + studentMSSV + "</td></tr>" +
+      "<tr><th>Họ tên</th><td>" + studentName + "</td></tr>" +
+      "<tr><th>Lớp</th><td>" + studentClass + "</td></tr>" +
+      "</table>";
+  }
+</script>
+</head>
+<body>
+
+<h2>Nhập Thông Tin Sinh Viên</h2>
+<button onclick="getStudentDetails()">Nhập Thông Tin</button>
+<div id="studentInfo"></div>
+
+</body>
+</html>

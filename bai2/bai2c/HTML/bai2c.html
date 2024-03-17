@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Selection</title>
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="../js/jquery-3.7.1.min.js">
+    <link rel="stylesheet" href="../js/jqr.js">
+    <meta name="23633801" content="Huỳnh Hoài Thanh"> 
+</head>
+
+<body>
+    <div style="display: flex;justify-content: center;padding-top:20vh;">
+        <div style="border: 2px solid black;width: 100vh;">
+            <h3 class="text-muted">Chọn loại cafe :</h3>
+        <input type="checkbox" id="trungNguyen" name="coffee" value="Trung Nguyen">
+        <label for="trungNguyen">Trung Nguyen</label><br>
+        <input type="checkbox" id="meKong" name="coffee" value="Me Kong">
+        <label for="meKong">Me Kong</label><br>
+        <input type="checkbox" id="newLife" name="coffee" value="New Life">
+        <label for="newLife">New Life</label><br>
+        <input type="checkbox" id="oceanBlue" name="coffee" value="Ocean Blue">
+        <label for="oceanBlue">Ocean Blue</label><br>
+        <input type="checkbox" id="blueSpace" name="coffee" value="Blue Space">
+        <label for="blueSpace">Blue Space</label><br>
+        <input type="checkbox" id="windows" name="coffee" value="Windows">
+        <label for="windows">Windows</label><br><br>
+    
+        <button onclick="myFunction()">Chọn</button>
+        <p id="demo"></p>
+        <p>Bạn chọn cafe: <span style="color: red;" id="output"></span></p>
+        </div>
+    </div>
+
+    <script>
+        function myFunction() {
+        
+            var checkboxes = document.querySelectorAll('input[name="coffee"]:checked');
+            console.log(checkboxes); // Corrected variable name
+            var selected = [];
+            for (var checkbox of checkboxes) {
+                selected.push(checkbox.value);
+            }
+            document.getElementById('output').innerText = selected.join(', ');
+            var buttonsDiv = document.getElementById('buttons');
+            buttonsDiv.innerHTML = '';
+            for (var i = 0; i < selected.length; i++) {
+                var button = document.createElement('button');
+                button.innerHTML = selected[i];
+                buttonsDiv.appendChild(button);
+            }
+        }
+       
+    </script>
+</body>
+
+</html>

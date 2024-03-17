@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="../js/jquery-3.7.1.min.js">
+    <link rel="stylesheet" href="../js/jqr.js">
+    <meta name="23633801" content="Huỳnh Hoài Thanh">
+    <script type="text/javascript">
+        function submitForm(formName) {
+            var userName = document.forms[formName]["username"].value;
+            var password = document.forms[formName]["password"].value;
+            
+            if(userName && password) {
+                alert("Form " + formName + " submitted successfully!");
+                if(formName === 'dangnhap') {
+                    document.forms['dangky']['username'].value = userName;
+                    document.forms['dangky']['password'].value = password;
+                }
+            } else {
+                alert("Please fill in both username and password in " + formName + " form.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <form name="dangnhap" onsubmit="event.preventDefault(); submitForm('dangnhap');">
+        <fieldset>
+            <legend>THONG TIN DANG KY</legend>
+            UserName: <input type="text" name="username"><br>
+            PassWord: <input type="password" name="password"><br>
+            <input type="submit" value="Dang nhap">
+        </fieldset>
+    </form><br><br>
+    <form name="dangky" onsubmit="event.preventDefault(); submitForm('dangky');">
+        <fieldset>
+            <legend>THONG TIN  DANG NHAP</legend>
+            Ho ten: <input type="text" name="username"><br>
+            Mat khau: <input type="password" name="password"><br>
+            <input type="submit" value="Dang ky">
+        </fieldset>
+    </form>
+</body>
+</html>

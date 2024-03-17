@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta name="23633801" content="Huỳnh Hoài Thanh"> 
+    <style>
+        #title{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+            margin: 0;
+            width: 120vh;
+        }
+        div {
+            text-align: center;
+        }
+    </style>
+    <style>
+        #title{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+            margin: 0;
+            width: 120vh;
+        }
+        div {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body style="display: flex;justify-content: center;">
+    <div id="title">
+        <div style="border:2px solid blue ;">
+        <h2>FORM ĐỊNH DẠNG</h2>
+        <form id="myForm">
+            <label for="name">Họ và tên:</label>
+            <input type="text" id="name" name="name"><br>
+            <label for="name">Chọn</label>
+            <input type="radio" id="background" name="format" value="Background">
+            <label for="background">Background</label>
+            <input type="radio" id="font" name="format" value="Font">
+            <label for="font">Font</label><br>
+            <label for="color">Chọn màu:</label>
+            <select id="color" name="color">
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+                <option value="green">Green</option>
+                <option value="yellow">Yellow</option>
+                <option value="gray">Gray</option>
+                <!-- Add more colors as needed -->
+            </select><br>
+            <input type="button" value="Đổi màu" onclick="changeColor()">
+            <input type="reset" value="Cancel">
+            <p>you can direct link the hyperlink with the file if you know the address but this is limited by the browser.
+                eg. if pdf reader is installed on the client then the pdf will not be downloaded instead it will be shown. A
+                good solution would be to have a seperate page for downloading files. just pass filename in querystring and
+                in the pageload event just outpit the file in response stream. This way you can use url say dwnld.aspx?
+                filename.ext</p>
+        </form>
+    </div></div>
+    <script>
+        function changeColor() {
+            var name = document.getElementById('name').value;
+            var format = document.querySelector('input[name="format"]:checked').value;
+            var color = document.getElementById('color').value;
+            if (format == 'Background') {
+                document.body.style.backgroundColor = color;
+            } else if (format == 'Font') {
+                document.body.style.color = color;
+            }
+            alert('Đã đổi màu ' + format.toLowerCase() + ' cho ' + name);
+        }
+    </script>
+</body>
+
+</html>

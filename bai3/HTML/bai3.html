@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="../js/jquery-3.7.1.min.js">
+    <link rel="stylesheet" href="../js/jqr.js">
+    <meta name="23633801" content="Huỳnh Hoài Thanh"> 
+    <style>
+        #title {
+            width: 500px;
+            height: 300px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var images = ['../images/b1.jpg', '../images/b2.jpg', '../images/b3.jpg', '../images/b4.jpg', '../images/b5.jpg', '../images/b6.jpg', '../images/b7.jpg', '../images/b8.jpg', '../images/b9.jpg', '../images/b10.jpg'];
+        var timeoutId;
+
+        function changeColor() {
+            var name = document.getElementById('name').value;
+            var format = document.querySelector('input[name="format"]:checked').value;
+            var color = document.getElementById('color').value;
+            if (format == 'Background') {
+                document.body.style.backgroundColor = color;
+            } else if (format == 'Font') {
+                document.body.style.color = color;
+            }
+            alert('Đã đổi màu ' + format.toLowerCase() + ' cho ' + name);
+        }
+
+        function play() {
+            changeImage();
+            timeoutId = setInterval(changeImage, 400);
+        }
+
+        function stop() {
+            clearInterval(timeoutId);
+        }
+
+        function changeImage() {
+            var randomIndex = Math.floor(Math.random() * images.length);
+            document.getElementById('title').src = images[randomIndex];
+        }
+    </script>
+        <div style="display: flex;justify-content: center;margin: 10vh;">
+            <img  id="title" src='../images/b1.jpg' alt='Random Image'>
+        </div>
+        <div style="display: flex;justify-content: center;padding-top: vh;">
+            <button style="font-size: 140%;" onclick="play()">Play</button>
+        <button style="font-size: 140%;" onclick="stop()">Stop</button>
+        </div>
+</body>
+</html>
